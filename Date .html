@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //获取下电脑当前的日期和时间 2018年05月17日 星期四 15时34分
+    var now = new Date() //以当前时间为基准创建了一个时间对象
+    console.log(now);
+    var year = now.getFullYear();//年
+    var month = now.getMonth() + 1;//月（0~11）
+    var date = now.getDate();//日
+    var week = now.getDay();//周几 （0~6）
+    console.log(week);
+    var hour = now.getHours();//时
+    var minute = now.getMinutes();//分
+     var second = now.getSeconds();//秒
+    //var mSecond = now.getMilliseconds();//毫秒
+    //var time = now.getTime();//毫秒数 距离1970年0时0分0秒的毫秒数
+  /*  switch (week){
+        case 0:
+            week = "星期日";
+            break;
+        case 1:
+            week = "星期一";
+            break;
+        case 2:
+            week = "星期二";
+            break;
+        case 3:
+            week = "星期三";
+            break;
+        case 4:
+            week = "星期四";
+            break;
+        case 5:
+            week = "星期五";
+            break;
+        default:
+            week ="星期六"
+    }*/
+
+        var ary = ["日", "一", "二", "三", "四", "五", "六"];
+    week = "星期" + ary[week];
+
+
+    //    小于10以内数需要补0,10以外的原值返回
+    function zero(num) {
+        return num < 10 ? "0" + num : num;
+    }
+
+    var str = zero(year)+'年'+zero(month)+"月"+zero(date)+"日"+week+zero(hour)+"时"+zero(minute)+"分"+second+"秒";
+    console.log(str);
+
+</script>
